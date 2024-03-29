@@ -1,0 +1,69 @@
+.contain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+
+}
+body{
+    background-color: #eeeeeeee;
+}
+.login-logo {
+position: absolute;
+top: -0%
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    height: 50vh;
+    width: 450px;
+    border-radius: 10px;
+  
+    margin-top: 6%;
+}
+
+.login-container h2 {
+    font-weight: 700;
+    font-size: 34px;
+}
+
+.form-group{
+font-weight:600;
+
+}
+.label {
+
+    
+}
+#email {
+  
+}
+input[type="text"],
+input[type="password"] {
+
+    width: 100%;
+    padding: 8px;;
+    border: 1px solid #633cff;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.login-button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 22px;
+    border-radius: 5px;
+    border: none;
+    background-color: #633cff;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-container a {
+    text-decoration: none;
+
+}
