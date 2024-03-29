@@ -40,3 +40,7 @@ input[type="reg-text"] {
     background-color:#633cff;
     color:#fff
 }
+
+.reg-container a {
+    text-decoration: none;
+}

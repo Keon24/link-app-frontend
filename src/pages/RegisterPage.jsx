@@ -17,6 +17,7 @@ const RegisterPage = () => {
         <input
         type= "reg-text"
         id="reg-email"
+        placeholder="Enter your email address"
         
         />
       </div>
@@ -25,6 +26,7 @@ const RegisterPage = () => {
         <input
         type="reg-text"
         id="reg-password"
+        placeholder="Create your password"
         />
       </div>
       <div className="reg-form-group">
@@ -32,6 +34,7 @@ const RegisterPage = () => {
         <input
         type="reg-text"
         id="reg-confirm-password"
+        placeholder="Re-enter your password"
         
         />
         <p>Password must be at least 8 characters</p>
