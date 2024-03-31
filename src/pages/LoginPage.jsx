@@ -1,17 +1,34 @@
 import { useState } from "react"
 import { Link } from 'react-router-dom';
-
+import UserErrors from "../errors/usererrors";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 import "./loginpage.css"
 
 
 const LoginPage = () => {
 
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
   event.preventDefault();
+  try {
+    await axios.post("http://localhost:5000/user/login", {
+   username,
+   password
+    });
+    alert("Successfully logged in")
+    navigate('/links')
+  } catch (error) {
+   if(error.response.data === UserErrors.WRONG_CREDENTIALS) {
+    alert("Incorrect one attempt left")
+   }else{
+    alert("Something went wrong")
+   }
+  }
   }
   
   return (
@@ -29,8 +46,8 @@ const LoginPage = () => {
             type="text"
             id="email"
             placeholder="Enter your email"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)} 
+            value={username}
+            onChange={(event) => setUsername(event.target.value)} 
           
             />
 
