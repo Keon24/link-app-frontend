@@ -1,16 +1,35 @@
 import { Link } from "react-router-dom"
 import { useState } from "react"
+import axios from "axios"
+import UserErrors from "../errors/usererrors"
+import { useNavigate } from "react-router-dom"
 import "./registerpage.css"
 
 
 const RegisterPage = () => {
-const [ email, setEmail ] = useState ("");
+const [ username, setUsername ] = useState ("");
 const [ password, setPassword ] = useState ("");
 const [ confirmPassword, setConfirmPassword ] = useState("");
+const navigate = useNavigate();
 
-const handleSubmit = (event) => {
+const handleSubmit = async (event) => {
 event.preventDefault();
+try {
+  await axios.post("http://localhost:5000/user/register", {
+    username,
+    password,
+    confirmPassword
+  }); 
+  alert("Registration Completed")
+  navigate('/login')
+} catch (error) {
+  if(error.response.data === UserErrors.USERNAME_ALREADY_EXISTS) {
+  alert("Username already exist")
+  }else{
+    alert("Something went wrong")
+  }
 }
+};
 
   return (
 <div className="logo-container">
@@ -26,8 +45,8 @@ event.preventDefault();
         type= "reg-text"
         id="reg-email"
         placeholder="Enter your email address"
-        value={email}
-        onChange={(event) => setEmail(event.target.value)}
+        value={username}
+        onChange={(event) => setUsername(event.target.value)}
         
         />
       </div>
@@ -49,7 +68,7 @@ event.preventDefault();
         placeholder="Re-enter your password"
         value={confirmPassword}
         onChange={(event) => setConfirmPassword (event.target.value)}
-        
+  
         />
         <p>Password must be at least 8 characters</p>
         <button className="reg-button ">Register</button>
