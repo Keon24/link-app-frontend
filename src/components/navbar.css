@@ -7,7 +7,7 @@
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 50px;
+    gap: 15px;
   
 
 }
@@ -29,10 +29,35 @@
   }
 
   .logout-link {
-    display:block;
+    border: 2px solid #633cff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    padding: 0px 15px; 
+    border-radius: 5px; 
+    background-color: #fff; 
+    color: #fff; 
+
+    transition: all 0.3s ease; 
   }
 .logout-link a {
     text-decoration: none;
     color: #633cff;
     font-weight: 500;
   }
+ 
+  .prev-link {
+    border: 2px solid #633cff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    padding: 0px 15px; 
+    border-radius: 5px; 
+    background-color: #fff; 
+    color: #fff; 
+
+    transition: all 0.3s ease; 
+}
+
+.prev-link:hover {
+    background-color: #633cff; 
+    color: #fff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+}
+
