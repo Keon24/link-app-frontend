@@ -6,6 +6,7 @@
 }
 .nav-menu {
     display: flex;
+    flex-direction: row;
     list-style: none;
     gap: 15px;
   

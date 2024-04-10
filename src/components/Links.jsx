@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import axios from 'axios'
 import Navbar from "../components/Navbar"
 import "./links.css"
 
@@ -8,18 +9,35 @@ const Links = () => {
  const [ newPlatform, setNewPlatform ] = useState("other")
  const [ showInput, setShowInput] = useState(false);
 
+
  const platforms = ["GitHub", "YouTube", "LinkedIn", "Facebook", "Frontend Mentor", "Other"];
-
- 
-
-
- 
 
 const removeLink = (index) => {
 setLinks(links.filter((_,linkindex) => linkindex !== index))
 }
 
+const addLink = async () => {
+  if (newLink && newPlatform) {
+    try {
+   
+      const response = await axios.post('http://localhost:5000/link', {
+        url: newLink,
+        platform: newPlatform,
+        userId: "6608716cb49a91370ebedb9b" 
+      });
 
+      setLinks(prevLinks => [...prevLinks, response.data]);
+
+
+      setNewLink('');
+      setNewPlatform('GitHub');
+      setShowInput(false); 
+    } catch (error) {
+      console.error('Error saving link:', error);
+    
+    }
+  }
+};
 
   return (
     <div>
@@ -71,14 +89,19 @@ setLinks(links.filter((_,linkindex) => linkindex !== index))
 
 {showInput && (
   <div>
-    <select className="platform-button" value={newPlatform} onChange={(e) => setNewPlatform(e.target.value)}>
+    <select className="platform-button" 
+    value={newPlatform} 
+    onChange={(e) => setNewPlatform(e.target.value)}>
       {platforms.map(platform => (
-        <option key={platform} value={platform}>{platform}</option>
+        <option key={platform} 
+        value={platform}>{platform}</option>
       ))}
     </select>
-    <input className="link-input" type="text" value={newLink} onChange={(e) => setNewLink(e.target.value)} placeholder="Paste a URL here" />
+    <input className="link-input" type="text" 
+    value={newLink} 
+    onChange={(e) => setNewLink(e.target.value)} placeholder="Paste a URL here" />
    
-    <button className="save-button">Save</button>
+    <button className="save-button" onClick={addLink}>Save</button>
   </div>
 )}
 
