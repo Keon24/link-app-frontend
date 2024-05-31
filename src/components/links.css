@@ -52,3 +52,14 @@
   .platform-button {
     width:105%
   }
+
+  .link-text {
+    fill: red; /* Text color */
+   
+    border: 10px solid yellow; /* Text outline color */
+    font-family: 'Arial', sans-serif; /* Font family */
+    font-weight: bold; /* Bold text */
+   
+    height: 100px;
+    width: 100px;
+  }
