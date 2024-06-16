@@ -3,16 +3,16 @@ import { Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
 import './layout.css';
 import { useSelector } from 'react-redux';
-import { selectImage } from '../redux/imageSlice'; // Adjust the import path as needed
+import { selectImage } from '../redux/imageSlice'; 
 
 const Layout = () => {
-  const image = useSelector(selectImage); // Use the selector to access the image URL
+  const image = useSelector(selectImage); 
 
   return (
     <div>
       <Navbar />
       <div className="container">
-        <svg className="mockup-phone" xmlns="http://www.w3.org/2000/svg" width="308" height="632" viewBox="0 0 308 632">
+        <svg className="mockup-phone" xmlns="http://www.w3.org/2000/svg" width="408" height="632" viewBox="0 0 308 632">
           <defs>
             <clipPath id="circleView">
               <circle cx="153.5" cy="112" r="48"/>

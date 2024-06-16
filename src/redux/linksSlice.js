@@ -13,11 +13,10 @@ export const linksSlice = createSlice({
   },
 });
 
-// Actions
+
 export const { addLink, removeLink } = linksSlice.actions;
 
-// Selector
+
 export const selectLinks = state => state.links;
 
-// Reducer
 export default linksSlice.reducer;
