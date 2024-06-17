@@ -33,9 +33,10 @@ const Links = () => {
   };
 
   return (
-    <div className='container'>
+    <div className='link-phone'>
       <h1>Customize your links</h1>
       <p>Add/Remove/Delete links below then share your profile with the world</p>
+      
       <button className='add-link-button' onClick={() => setShowInput(true)}>+ Add new link</button>
       {showInput && (
         <div>
@@ -66,7 +67,6 @@ const Links = () => {
       )}
 
       <LinksDisplay links={links} />
-      
     </div>
   );
 };

@@ -1,31 +1,45 @@
 .upload-section {
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
+  margin-top: 12px;
   position: absolute;
   left: 50%;
+  top: 4%;
   padding:10px;
+  line-height: 10px;
+  
 }
 
 .user-profile {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  gap: 50px;
+  margin-top: 10px;
   position: absolute;
   bottom: 65%;
-  left: 50%;
+  left: 45%;
+  height: 10%;
+  line-height: 80px;
   background-color: #fcfcfc; 
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); 
   border-radius: 8px; 
   padding: 20px; 
   transition: box-shadow 1.3s ease-in-out; 
 }
-.profile-image {
-    background-color:blueviolet;
-  
-
+.custom-file-upload {
+    display: block;
+    padding: 8px 20px;
+    height: 100%;
+    background-color: #EFEBFF;
+    border: 1px solid #633cff;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #633cff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); 
+    transition: box-shadow 1.3s ease-in-out; 
 }
+
 
 .user-details {
  display:grid;

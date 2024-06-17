@@ -40,7 +40,11 @@ const ProfileDetails = () => {
       </div>
       <div className="user-profile">
         <h3 className="profile-pic">Profile Picture</h3>
-        <input className="profile-image" type="file" onChange={handleFileChange} />
+        <label htmlFor="file-upload" className="custom-file-upload">
+  Upload Image
+</label>
+<input id="file-upload" className="profile-image" type="file" onChange={handleFileChange} style={{ display: 'none' }} />
+
         {image && <img src={image} alt="Uploaded" />}
        <p className="pic-size">Image must be below 1024x1024px. Use PNG or JPG fomrat</p>
       </div>
