@@ -1,4 +1,4 @@
-// src/redux/imageSlice.js
+
 import { createSlice } from '@reduxjs/toolkit';
 
 export const imageSlice = createSlice({

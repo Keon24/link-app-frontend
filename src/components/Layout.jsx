@@ -1,12 +1,14 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
+import LinksDisplay from './LinksDisplay'; // Make sure this is imported
 import './layout.css';
 import { useSelector } from 'react-redux';
-import { selectImage } from '../redux/imageSlice'; 
+import { selectImage } from '../redux/imageSlice';
 
 const Layout = () => {
-  const image = useSelector(selectImage); 
+  const image = useSelector(selectImage);
+  const links = useSelector(state => state.links); // Assuming 'links' state is managed similarly
 
   return (
     <div>
@@ -24,6 +26,7 @@ const Layout = () => {
           {image && (
             <image href={image} x="105.5" y="64" width="96" height="96" clipPath="url(#circleView)"/>
           )}
+          {/* Ensure all colored rectangles are defined before LinksDisplay */}
           <rect width="160" height="16" x="73.5" y="185" fill="#EEE" rx="8"/>
           <rect width="72" height="8" x="117.5" y="214" fill="#EEE" rx="4"/>
           <rect width="237" height="44" x="35" y="278" fill="#333333" rx="8"/>
@@ -31,6 +34,8 @@ const Layout = () => {
           <rect width="237" height="44" x="35" y="406" fill="#633CFF" rx="8"/>
           <rect width="237" height="44" x="35" y="470" fill="#737373" rx="8"/>
           <rect width="237" height="44" x="35" y="534" fill="#BEADFF" rx="8"/>
+          {/* Render LinksDisplay last to ensure it appears on top */}
+          <LinksDisplay links={links} />
         </svg>
         <Outlet />
       </div>

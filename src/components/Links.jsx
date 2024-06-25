@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { addLink } from '../redux/linksSlice';
-import LinksDisplay from './LinksDisplay';
+
 import './links.css';
 
 const Links = () => {
@@ -66,7 +66,7 @@ const Links = () => {
         </div>
       )}
 
-      <LinksDisplay links={links} />
+    
     </div>
   );
 };
